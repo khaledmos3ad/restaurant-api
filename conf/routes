@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# Restaurants controllers 
+GET     /api/restaurant               controllers.RestaurantAPIController.getAll(closed:Int ?=1)
+POST    /api/restaurant               controllers.RestaurantAPIController.post
+PUT     /api/restaurant/:uuid         controllers.RestaurantAPIController.put(uuid: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
